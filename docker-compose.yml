@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  streamlit_app:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    environment:
+      - VIRTUAL_HOST=demo.yantar.yazero.io
+      - VIRTUAL_PORT=8501
+      - LETSENCRYPT_HOST=demo.yantar.yazero.io
